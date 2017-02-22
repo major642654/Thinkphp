@@ -1,0 +1,50 @@
+.article_form{
+    margin-left: 30px;
+}
+
+.sort{
+    border: 1px solid #00B7EE;
+    padding: 6px;
+    margin-top: 20px;
+}
+.sort option{
+    line-height: 30px;
+}
+
+.article_input{
+    width: 300px;
+    padding: 10px;
+    border: 1px solid #00B7EE;
+    margin-top: 20px;
+}
+
+.article_label{
+    font-size: 20px;
+    font: 宋体;
+}
+/*.article_content{
+    position: relative;
+    bottom: 400px;
+}*/
+/*.demo{*/
+    /*position: relative;*/
+    /*left: 170px;*/
+    /*bottom: 370px ;*/
+/*}*/
+.sub_form_div{
+
+}
+
+.demo{
+   margin-left: 50px;
+}
+
+
+.sub_form_div{
+    float: left;
+}
+
+.article_content{
+    clear: left;
+}
+

@@ -1,0 +1,110 @@
+.show_article{
+    width: auto;
+    border-top: 1px ;
+    border-left: 1px ;
+    color: #00489e;
+    font-family: 微软雅黑,宋体;
+}
+.title{
+    display: block;
+    width: 300px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+a{
+    text-decoration-line: underline;
+}
+a:visited{
+    text-decoration: none;
+}
+.author{
+    display: block;
+    width: 200px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.date{
+    display: block;
+    width: 200px;
+}
+.delete{
+    background: #d9534f;
+    color: #ffffff;
+    float: left;
+    display: block;
+    width: 78px;
+    height: 28px;
+    line-height: 25px;
+    border-radius: 5px;
+    margin-left: 5px;
+    text-align: center;
+    color: white;
+}
+form{
+    margin-left: 30px;
+}
+.title a{
+    color: #00489e;
+
+}
+
+ul{
+    overflow: hidden;
+}
+ul li{
+    float: left;
+    margin-left: 50px;
+}
+.page{
+    padding-right: 3px;
+    padding-left: 3px;
+    padding-bottom: 3px;
+    margin: 3px;
+    padding-top: 3px;
+    text-align: center
+}
+.page a{
+    border-right: #ccc 1px solid;
+    padding-right: 6px;
+    background-position: 50% bottom;
+    border-top: #ccc 1px solid;
+    padding-left: 6px;
+    font-weight: bold;
+    padding-bottom: 2px;
+    border-left: #ccc 1px solid;
+    color: rgb(66,97,222);
+    margin-right: 3px;
+    padding-top: 2px;
+    border-bottom: #ccc 1px solid;
+    text-decoration: none
+}
+.page a:hover{
+    background-image: none;
+    color: #fff;
+    background-color: #4261df
+}
+.page a:active{
+    background-image: none;
+    color: #fff;
+    background-color: #4261df
+}
+.page span.current{
+    padding-right: 6px;
+    padding-left: 6px;
+    font-weight: bold;
+    padding-bottom: 2px;
+    color: #000;
+    margin-right: 3px;
+    padding-top: 2px
+}
+.page span.disabled{
+    display: none
+}
+.table_head{
+    font-size: 25px;
+    text-align: center;
+    color: orangered;
+}
+

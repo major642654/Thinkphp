@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{$Think.const.SOURCE}/admin/css/show_article.css"/>
+    <script type="text/javascript" src="{$Think.const.SOURCE}/admin/js/jquery.min.js" ></script>
+    <title></title>
+</head>
+<body>
+<form class="article_form" action="{:U('article/show_article')}" method="post">
+    <label class="" for="parent_sort">选择父分类</label>
+    <select name="parent_sort" id="parent_sort" class="sort" _href="{:U('article/get_child_sort')}">
+        <volist name="parent_sorts" id="parent_sort">
+            <if condition="$parent_sort['sortid'] neq $p_sort">
+                <option value="{$parent_sort['sortid']}">{$parent_sort['sortname']}</option>
+                <else/><option value="{$parent_sort['sortid']}" selected="selected">{$parent_sort['sortname']}</option>
+            </if>
+        </volist>
+    </select>
+    <label class="article_label" for="parent_sort">选择子分类</label>
+    <select name="child_sort" id="child_sort" class="sort">
+        <volist name="child_sorts" id="child_sort">
+            <if condition="$child_sort['sortid'] neq $c_sort">
+                <option value="{$child_sort['sortid']}">{$child_sort['sortname']}</option>
+                <else/><option value="{$child_sort['sortid']}" selected="selected">{$child_sort['sortname']}</option>
+            </if>
+        </volist>
+    </select>
+    <input type="submit" value="确定该选项"/>
+    </form>
+
+<div name="show_article" class="show_article">
+    <ul>
+        <li class="title table_head">标题</li>
+        <li class="author table_head">来源</li>
+        <li class="date table_head">日期</li>
+        <!--<a href=""></a>-->
+    </ul>
+    <volist name="news_info" id="news">
+        <ul>
+            <li class="title"><a href="{:U('article/add_article_form','id='.$news['id'])}">{$news['title']}</a></li>
+            <if condition="$news['source'] eq ''">
+                <li class="author" style="text-align: center">本站原创</li>
+                <else/>
+                <li class="author" style="text-align: center" >{$news['source']}</li>
+            </if>
+
+            <li class="date">{$news['add_time']}</li>
+            <a  _href="{:U('article/article_delete', 'id='.$news['id'])}" href="javascript:void(0)" class="delete">删除</a>
+        </ul>
+    </volist>
+</div>
+<div class="page">{$page}</div>
+<script type="text/javascript" src="{$Think.const.SOURCE}/admin/js/article/article.js" ></script>
+<script type="text/javascript" src="{$Think.const.SOURCE}/admin/js/article/delete.js" ></script>
+</body>
+</html>
