@@ -12,16 +12,20 @@
     <script src="<?php echo (SOURCE); ?>/admin/js/article/pintuer.js"></script>
 </head>
 <body>
-<form method="post" action="">
+<form method="post" action="<?php echo U('article/deleteALl');?>">
   <div class="panel admin-panel">
     <div class="panel-head"><strong class="icon-reorder"> 生产管理</strong></div>
     <div class="padding border-bottom">
       <ul class="search">
         <li>
           <button type="button"  class="button border-green" id="checkall"><span class="icon-check"></span> 全选</button>
-          <button type="submit" class="button border-red"><span class="icon-trash-o"></span> 批量删除</button>
+          <button type="submit" class="button border-red" onclick="return del()"><span class="icon-trash-o"></span> 批量删除</button>
         </li>
+          <!--<li style="float: right">
+              <input type="text" placeholder="请输入搜索关键字" name="keywords" class="input" style="width:250px; line-height:17px;display:inline-block" />
+              <a  id="search" name="search" href="<?php echo U('article/search');?>" class="button border-main icon-search"  > 搜索</a></li>-->
       </ul>
+
     </div>
 
 
@@ -38,7 +42,7 @@
         <th valign="center">操作</th>
       </tr>
       <?php if(is_array($list)): $i = 0; $__LIST__ = $list;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><tr>
-        <td><input type="checkbox" name="id[]" value='1' />
+        <td><input type="checkbox" name="id[]" value='<?php echo ($vo["product_id"]); ?>' />
           <?php echo ($vo["product_id"]); ?></td>
         <td><?php echo ($vo["product_name"]); ?></td>
         <td><?php echo ($vo["batch"]); ?></td>
@@ -93,23 +97,21 @@ $("#checkall").click(function(){
 	  }
   });
 })
-
-function DelSelect(){
-	var Checkbox=false;
-	 $("input[name='id[]']").each(function(){
-	  if (this.checked==true) {		
-		Checkbox=true;	
-	  }
-	});
-	if (Checkbox){
-		var t=confirm("您确认要删除选中的内容吗？");
-		if (t==false) return false; 		
-	}
-	else{
-		alert("请选择您要删除的内容!");
-		return false;
-	}
-}
+/*$("#search").click(function () {
+    $.ajax({
+        type:'post',
+        url:"<?php echo U('article/search');?>",
+        success: function (data) {
+            if(data.state == 1)
+            {
+                alert("12");
+            }
+            else {
+                alert("11");
+            }
+        }
+    })
+})*/
 
 </script>
 </body></html>

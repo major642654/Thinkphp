@@ -19,7 +19,7 @@ class ArticleController extends Controller
             $offset = ($p -1) *$pageSize;
             $list = $product->where('isHide=1')->field('*')->order('update_time desc')->limit($offset,$pageSize)->select();
             $this->assign('list',$list);
-            $count = $product->field('*')->count();
+            $count = $product->where('isHide=1')->field('*')->count();
             $Page       = new \Think\Page($count,10);// 实例化分页类 传入总记录数和每页显示的记录数
             $show       = $Page->show();// 分页显示输出
             $this->assign('page',$show);// 赋值分页输出
@@ -31,6 +31,25 @@ class ArticleController extends Controller
             redirect(U('login/index'));
         }
     }
+    /*public function search()
+    {
+        $keyword = $_POST['search'];
+        $product = M('product');
+        $data['product_id|product_name|batch|product_info|state'] = array('like','%'.$keyword.'%');
+        $list = $product->where($data)->select();
+        dump($list);
+        $this->assign('list',$list);
+        //$this->display('product');
+        if($success)
+        {
+            $this->ajaxReturn($success,'查询成功！',1);
+        }
+        else
+        {
+            $this->ajaxReturn($success,'查询失败!',0);
+        }
+
+    }*/
     public function edit()
     {
         $id = $_GET['id'];
@@ -59,10 +78,23 @@ class ArticleController extends Controller
    {
        $data['isHide'] = 0;
        $success = M('product')->WHERE("product_id='".$_GET['id']."'")->save($data);
-        if($success)
-        {
-           $this->redirect('product');
-        }
+       $this->redirect('product');
        //echo M('product')->_sql();
    }
+    public function deleteAll()
+    {
+        $prodect = M('product');
+        $id = $_POST['id'];
+        $data['isHide'] =0;
+        if(is_array($id))
+        {
+            $where = 'product_id in ('.implode(',',$id).')';
+        }
+        else
+        {
+            $where =  'product_id='.$id;
+        }
+        $success = $prodect->where($where)->save($data);
+        $this->redirect('product');
+    }
 }
