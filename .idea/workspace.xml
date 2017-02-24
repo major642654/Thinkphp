@@ -2,12 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bea86af4-62a7-466e-95e4-cea8a4353aa9" name="默认的" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Application/Home/View/Index/login.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/index.php" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Application/Home/Controller/ArticleController.class.php" afterPath="$PROJECT_DIR$/Application/Home/Controller/ArticleController.class.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Application/Home/View/Article/product.html" afterPath="$PROJECT_DIR$/Application/Home/View/Article/product.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Application/Runtime/Cache/Home/03607bb3476a68c0d53759fd2e2e54fc.php" afterPath="$PROJECT_DIR$/Application/Runtime/Cache/Home/03607bb3476a68c0d53759fd2e2e54fc.php" />
     </list>
     <ignored path="major.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -51,11 +46,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ArticleController.class.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="ArticleController.class.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Application/Home/Controller/ArticleController.class.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-2.8387096">
-              <caret line="33" column="6" selection-start-line="33" selection-start-column="4" selection-end-line="51" selection-end-column="7" />
+            <state vertical-scroll-proportion="0.039711192">
+              <caret line="33" column="4" selection-start-line="33" selection-start-column="4" selection-end-line="51" selection-end-column="7" />
               <folding>
                 <element signature="e#6#87#0#PHP" expanded="true" />
               </folding>
@@ -73,10 +68,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="product.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="product.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Application/Home/View/Article/product.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-2.8483756">
+            <state vertical-scroll-proportion="50.903225">
               <caret line="25" column="130" selection-start-line="23" selection-start-column="10" selection-end-line="25" selection-end-column="130" />
               <folding />
             </state>
@@ -111,8 +106,8 @@
         <option value="$PROJECT_DIR$/Application/Home/View/Article/edit.html" />
         <option value="$PROJECT_DIR$/ThinkPHP/Common/functions.php" />
         <option value="$PROJECT_DIR$/Application/Home/Controller/IndexController.class.php" />
-        <option value="$PROJECT_DIR$/Application/Home/Controller/ArticleController.class.php" />
         <option value="$PROJECT_DIR$/Application/Home/View/Article/product.html" />
+        <option value="$PROJECT_DIR$/Application/Home/Controller/ArticleController.class.php" />
       </list>
     </option>
   </component>
@@ -367,7 +362,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.28214827" sideWeight="0.4914842" order="0" side_tool="false" content_ui="combo" />
@@ -729,16 +724,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Application/Home/Controller/ArticleController.class.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-2.8387096">
-          <caret line="33" column="6" selection-start-line="33" selection-start-column="4" selection-end-line="51" selection-end-column="7" />
-          <folding>
-            <element signature="e#6#87#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Application/Home/View/Article/edit.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-13.4838705">
@@ -749,9 +734,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Application/Home/View/Article/product.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-2.8483756">
+        <state vertical-scroll-proportion="50.903225">
           <caret line="25" column="130" selection-start-line="23" selection-start-column="10" selection-end-line="25" selection-end-column="130" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/Home/Controller/ArticleController.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.039711192">
+          <caret line="33" column="4" selection-start-line="33" selection-start-column="4" selection-end-line="51" selection-end-column="7" />
+          <folding>
+            <element signature="e#6#87#0#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
