@@ -35,28 +35,35 @@ class ArticleController extends Controller
     {
         $keyword = $_POST['search'];
         $product = M('product');
-        $data['product_id|product_name|batch|product_info|state'] = array('like','%'.$keyword.'%');
+        $data['product_id'] = array('like','%'.$keyword.'%');
         $list = $product->where($data)->select();
         dump($list);
         $this->assign('list',$list);
         //$this->display('product');
-        if($success)
+        if($list)
         {
-            $this->ajaxReturn($success,'查询成功！',1);
+            $this->ajaxReturn($list,'查询成功！',1);
         }
         else
         {
-            $this->ajaxReturn($success,'查询失败!',0);
+            $this->ajaxReturn($list,'查询失败!',0);
         }
 
     }*/
     public function edit()
     {
-        $id = $_GET['id'];
-        $time = date('Y-m-d H:i:s',time());
-        $this->assign('time',$time);
-        $this->assign('id',$id);
-        $this->display();
+        if(is_login())
+        {
+            $id = $_GET['id'];
+            $time = date('Y-m-d H:i:s',time());
+            $this->assign('time',$time);
+            $this->assign('id',$id);
+            $this->display();
+        }
+        else
+        {
+            redirect(U('login/index'));
+        }
     }
     public function editChange()
     {
@@ -96,5 +103,15 @@ class ArticleController extends Controller
         }
         $success = $prodect->where($where)->save($data);
         $this->redirect('product');
+    }
+    public function transport()
+    {
+        if(is_login())
+        {
+            $this->display();
+        }
+       else{
+           redirect(U('login/index'));
+       }
     }
 }
