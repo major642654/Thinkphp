@@ -47,9 +47,9 @@ class LoginController extends Controller
         if(is_login())
         {
             $admin = M('admin');
-            $password = $_POST['newpass'];
+            $password = substr(md5($_POST['newpass']),8,16);
             $mpass = $admin->where("username='".session('username')."'")->field('password')->find();
-            if($mpass['password'] ===($_POST['mpass']))
+            if($mpass['password'] ===(substr(md5($_POST['mpass']),8,16)))
             {
                 $res['code'] = 1;
                 $data['password'] = $password;

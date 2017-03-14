@@ -13,61 +13,33 @@
 </head>
 <body>
 <div class="panel admin-panel">
-  <div class="panel-head"><strong class="icon-reorder"> 内容列表</strong></div>
+  <div class="panel-head"><strong class="icon-reorder"> 桌面 > 货运管理 > 货运管理</strong></div>
  <!-- <div class="padding border-bottom">
     <button type="button" class="button border-yellow" onclick="window.location.href='#add'"><span class="icon-plus-square-o"></span> 添加分类</button>
   </div>-->
   <table class="table table-hover text-center">
     <tr>
-      <th width="5%">ID</th>
-      <th width="15%">一级分类</th>
-      <th width="10%">排序</th>
-      <th width="10%">操作</th>
+      <th width="5%">运单号</th>
+      <th width="10%">发货日期</th>
+      <th width="10%">货物重量</th>
+      <th width="10%">发货地址</th>
+      <th width="10%">收获地址</th>
+      <th width="10%">承运人</th>
+      <th width="10%">状态</th>
     </tr>
-    <tr>
-      <td>1</td>
-      <td>产品分类</td>
-      <td>1</td>
-      <td><div class="button-group"> <a class="button border-main" href="cateedit.html"><span class="icon-edit"></span> 修改</a> <a class="button border-red" href="javascript:void(0)" onclick="return del(1,2)"><span class="icon-trash-o"></span> 删除</a> </div></td>
-    </tr>
-    <tr>
-      <td>1</td>
-      <td>产品分类</td>
-      <td>1</td>
-      <td><div class="button-group"> <a class="button border-main" href="cateedit.html"><span class="icon-edit"></span> 修改</a> <a class="button border-red" href="javascript:void(0)" onclick="return del(1,2)"><span class="icon-trash-o"></span> 删除</a> </div></td>
-    </tr>
-    <tr>
-      <td>1</td>
-      <td>产品分类</td>
-      <td>1</td>
-      <td><div class="button-group"> <a class="button border-main" href="cateedit.html"><span class="icon-edit"></span> 修改</a> <a class="button border-red" href="javascript:void(0)" onclick="return del(1,2)"><span class="icon-trash-o"></span> 删除</a> </div></td>
-    </tr>
-    <tr>
-      <td>1</td>
-      <td>产品分类</td>
-      <td>1</td>
-      <td><div class="button-group"> <a class="button border-main" href="cateedit.html"><span class="icon-edit"></span> 修改</a> <a class="button border-red" href="javascript:void(0)" onclick="return del(1,2)"><span class="icon-trash-o"></span> 删除</a> </div></td>
-    </tr>
-    <tr>
-      <td>1</td>
-      <td>产品分类</td>
-      <td>1</td>
-      <td><div class="button-group"> <a class="button border-main" href="cateedit.html"><span class="icon-edit"></span> 修改</a> <a class="button border-red" href="javascript:void(0)" onclick="return del(1,2)"><span class="icon-trash-o"></span> 删除</a> </div></td>
-    </tr>
-    <tr>
-      <td>1</td>
-      <td>产品分类</td>
-      <td>1</td>
-      <td><div class="button-group"> <a class="button border-main" href="cateedit.html"><span class="icon-edit"></span> 修改</a> <a class="button border-red" href="javascript:void(0)" onclick="return del(1,2)"><span class="icon-trash-o"></span> 删除</a> </div></td>
-    </tr>
+    <?php if(is_array($list)): $i = 0; $__LIST__ = $list;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><tr>
+      <td><?php echo ($vo["transport_id"]); ?></td>
+      <td><?php echo ($vo["dispatch_date"]); ?></td>
+      <td><?php echo ($vo["weight"]); ?></td>
+      <td><?php echo ($vo["delivery_address"]); ?></td>
+      <td><?php echo ($vo["shopping_address"]); ?></td>
+      <td><?php echo ($vo["carrier"]); ?></td>
+      <td><?php echo ($vo["state"]); ?></td>
+    </tr><?php endforeach; endif; else: echo "" ;endif; ?>
   </table>
+
 </div>
-<script type="text/javascript">
-function del(id,mid){
-	if(confirm("您确定要删除吗?")){			
-		
-	}
-}
-</script>
+<div class="pagelist"><?php echo ($page); ?></div>
+
 </body>
 </html>

@@ -13,7 +13,7 @@
 </head>
 <body>
 <div class="panel admin-panel">
-  <div class="panel-head"><strong><span class="icon-key"></span> 修改会员密码</strong></div>
+  <div class="panel-head"><strong><span class="icon-key"></span> 桌面 > 用户管理 > 修改会员密码 </strong></div>
   <div class="body-content">
     <form method="post" class="form-x" action="">
       <div class="form-group">
@@ -88,7 +88,7 @@
                 return true;
             }
             else{
-              alert("原始密码不对，请重新输入");
+              alert("密码不对，请重新输入");
               return false;
             }
           }
